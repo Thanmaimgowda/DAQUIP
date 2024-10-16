@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PM2.5 Concentration Prediction</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label><br>
+            <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required><br><br>
+            
+            <label for="place">Place:</label><br>
+            <input type="text" id="place" name="place" required><br><br>
+            
+            <label for="aqi_category">AQI Category:</label><br>
+            <input type="text" id="aqi_category" name="aqi_category" required><br><br>
+            
+            <label for="nowcast_conc">Nowcast Concentration:</label><br>
+            <input type="number" id="nowcast_conc" name="nowcast_conc" required><br><br>
+            
+            <label for="raw_conc">Raw Concentration:</label><br>
+            <input type="number" id="raw_conc" name="raw_conc" required><br><br>
+            
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+            
+            <label for="time">Time:</label><br>
+            <input type="time" id="time" name="time" required><br><br>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
